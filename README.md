@@ -71,7 +71,7 @@ Una vez solicitemos por medio del puerto 35000 el archivo que deseamos obtener, 
 ![](/ReadmeImages/jpg.png)
 
 
-##Archivo no existente:
+## Archivo no existente:
 
 ![](/ReadmeImages/error.png)
 
