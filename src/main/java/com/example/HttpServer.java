@@ -18,7 +18,8 @@ public class HttpServer {
             System.err.println("Could not listen on port: 35000.");
             System.exit(1);
         }
-
+        
+        //In this part we start the client socket and it will open a comunication channel with the server socket
         boolean running = true;
         while (running) {
             Socket clientSocket = null;
@@ -94,6 +95,7 @@ public class HttpServer {
             out.write(fileData);
         }catch(Exception e){
             outputLine = httpError();
+            out.write(outputLine.getBytes());
         }    
         out.close();
         in.close();
@@ -116,9 +118,10 @@ public class HttpServer {
                     + "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
                     + "    </head>\n"
                     + "    <body>\n"
-                    + "        <h1>Error</h1>\n"
+                    + "        <h1>Error, the file does not exist, try again</h1>\n"
                     + "    </body>\n";
         return outputLine;
                 
      }
 }
+
